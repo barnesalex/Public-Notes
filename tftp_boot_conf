@@ -1,0 +1,22 @@
+DEFAULT menu.c32
+TIMEOUT 100
+PROMPT 1
+
+MENU TITLE <Type whatever you want to be the menu title>
+LABEL local
+MENU LABEL Local Boot
+  localboot 0
+
+LABEL memtest
+  MENU LABEL memtest
+  KERNEL memtest
+
+LABEL fedora27
+  MENU LABEL Fedora_27
+  KERNEL fedora27/vmlinuz
+  APPEND initrd=fedora27/initrd.img ip=dhcp inst.stage2=http://mirror.rnet.missouri.edu/fedora/linux/releases/27/Server/x86_64/os/
+
+LABEL centos7
+  MENU LABEL CentOS_7.4.1708
+  KERNEL centos7/vmlinuz
+  APPEND initrd=centos7/initrd.img ip=dhcp inst.repo=http://mirror.rnet.missouri.edu/centos/7.4.1708/os/x86_64/

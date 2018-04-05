@@ -1,0 +1,58 @@
+acl "trusted" {  //This can be named whatever you want
+        172.18.0.0/24;
+        localhost;
+        localnets;
+};
+
+options {
+        listen-on port 53 { 127.0.0.1; 172.18.0.1; };
+        //listen-on-v6 port 53 { ::1; };  IPV6,  Need to research more
+        directory       "/var/named";
+        dump-file       "/var/named/data/cache_dump.db";
+        statistics-file "/var/named/data/named_stats.txt";
+        memstatistics-file "/var/named/data/named_mem_stats.txt";
+        allow-query     { localhost; 172.18.0.0/24; };
+
+        dnssec-enable yes;
+        dnssec-validation yes;
+
+	allow-recursion { trusted; };
+
+        /* Path to ISC DLV key */
+        bindkeys-file "/etc/named.iscdlv.key";
+        managed-keys-directory "/var/named/dynamic";
+
+        pid-file "/run/named/named.pid";
+        session-keyfile "/run/named/session.key";
+
+	/* https://fedoraproject.org/wiki/Changes/CryptoPolicy */
+        include "/etc/crypto-policies/back-ends/bind.config";		//Fedora Stuff
+
+};
+
+logging {
+        channel default_debug {
+                file "data/named.run";
+                severity dynamic;
+        };
+};
+
+zone "." IN {
+        type hint;
+        file "named.ca";
+};
+
+zone "Host_Name.Domain_Name" IN {
+    type master;
+    file "dynamic/Host_Name.Domain_Name.fw";
+    allow-update { 127.0.0.1; 172.18.0.0/24; };
+};
+
+zone "0.18.172.in-addr.arpa" IN {
+    type master;
+    file "dynamic/Host_Name.Domain_Name.rev";
+    allow-update { 127.0.0.1; 172.18.0.0/24; };
+};
+
+include "/etc/named.rfc1912.zones";
+include "/etc/named.root.key";

@@ -1,0 +1,16 @@
+$ORIGIN .
+$TTL 3600       ; 1 hour
+orthanc.lan             IN SOA  ns1.Host_Name.Domain_Name. root.Host_Name.Domain_Name. (
+                                2018030122 ; serial YYYYMMDDVV  (version)
+                                3600       ; refresh (1 hour)
+                                1800       ; retry (30 minutes)
+                                604800     ; expire (1 week)
+                                86400      ; minimum (1 day)
+                                )
+                        NS      ns1.orthanc.lan.
+                        A       172.18.0.1
+
+$ORIGIN Host_Name.Domain_Name.
+$TTL 3600       ; 1 hour
+ns1                     A       172.18.0.1
+

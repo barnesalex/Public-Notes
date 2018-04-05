@@ -1,0 +1,15 @@
+$ORIGIN .
+$TTL 3600       ; 1 hour
+0.18.172.in-addr.arpa   IN SOA  ns1.Host_Name.Domain_Name. root.Host_Name.Domain_Name. (
+                                2018010211 ; serial YYYYMMDDVV  (version)
+                                3600       ; refresh (1 hour)
+                                1800       ; retry (30 minutes)
+                                604800     ; expire (1 week)
+                                86400      ; minimum (1 day)
+                                )
+                        NS      ns1.Host_Name.Domain_Name.
+                        A       172.18.0.1
+                        PTR     Host_Name.Domain_Name.
+$ORIGIN 0.18.172.in-addr.arpa.
+1                       PTR     ns1.Host_Name.Domain_Name.
+ 
