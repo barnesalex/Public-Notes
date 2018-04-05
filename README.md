@@ -2,7 +2,7 @@
 
 ## Bridge Configuration:  [/etc/sysconfig/network-scripts/ifcfg-<Bridge_Name_Here>](bridge_conf)
 
-## Ethernet Configuration (static):  /etc/sysconfig/network-scripts/ifcfg-<Interface_Name_Here>
+## WAN Configuration (static):  [/etc/sysconfig/network-scripts/ifcfg-<Interface_Name_Here>](wan_conf)
 Make sure Network Manager isn't messing up things
 ```
 systemctl disable NetworkManager
@@ -14,19 +14,19 @@ setenforce 0
 
 ```
 And for other ports you want controlled by the bridge
-## Other Ethernet Configuration /etc/sysconfig/network-scripts/ifcfg-<Interface_Name_Here>
+## Other Interface Configuration [/etc/sysconfig/network-scripts/ifcfg-<Interface_Name_Here>](slave_interface_config)
 
 # DHCP
 
 Install DHCPD
 ``` yum install dhcpd ```
-## DHCPD Configuration:  /etc/dhcp/dhpcd.conf
+## DHCPD Configuration:  [/etc/dhcp/dhpcd.conf])(dhcp_conf)
 
 # DNS
 
 Install BIND 9
 ``` yum install named ```
-## NameD Configuration: /etc/named.conf
+## NameD Configuration: [/etc/named.conf](named_conf)
 
 ## Zone Files/var/named
 
@@ -38,9 +38,9 @@ $ touch /var/named/dynamic/<Host_Name.Domain_Name>.rev
 $ chown named:named /var/named/dynamic
 ```
 
-### Forward Zone: /var/named/dynamic/<Host_Name.Domain_Name>.fw
+### Forward Zone: [/var/named/dynamic/<Host_Name.Domain_Name>.fw](forward_zone_conf)
 
-### Reverse Zone: /var/named/dynamic/<Host_Name.Domain_Name>.rev
+### Reverse Zone: [/var/named/dynamic/<Host_Name.Domain_Name>.rev](reverse_zone_conf)
 
 # Firewall Configuration (If on Centos)
 
@@ -103,5 +103,5 @@ wget the initrd.img and vmlinuz in RHEL based OSes
 
 Make directories to store these files per release and make menu entries for each
 
-## TFTP Configuration: /var/lib/tftpboot/pxelinux.cfg/default
+## TFTP Configuration: [/var/lib/tftpboot/pxelinux.cfg/default](tftp_boot_conf)
 Each entry needs to have a file or directory in /var/lib/tftpboot/ for the config to utilize
