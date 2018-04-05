@@ -1,0 +1,16 @@
+WAN Interface Config: /etc/sysconfig/network-scripts/ifcfg-<WAN Port>
+
+TYPE="Ethernet"
+NAME="<Interface Name>"
+DEVICE="<Interface Device>"
+ONBOOT="yes"
+UUID=<Interface UUID>
+ZONE=external
+DNS1="<DNS IP>"
+DNS2="<DNS IP>"
+GATEWAY=<Gateway IP>
+PREFIX=25
+IPADDR=<Static IP>
+NM_CONTROLLED=no
+IPV6INIT=no
+IPV6_AUTOCONF=no

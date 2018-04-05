@@ -1,0 +1,10 @@
+location: /etc/sysconfig/network-scripts/ifcfg-<Bridge Name>
+
+DEVICE="br0"
+TYPE=BRIDGE
+ONBOOT=yes
+BOOTPROTO=static
+IPADDR="172.18.0.1"
+PREFIX=24
+ZONE=internal
+NM_CONTROLLED=no
