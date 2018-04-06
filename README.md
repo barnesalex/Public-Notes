@@ -99,6 +99,9 @@ external (active)
 Install tftp-server and syslinux (and wget if you do not have it)
 ``` yum install tftp-server syslinux wget ```
 
+
+cp -r /usr/share/syslinux/* /var/lib/tftpboot
+
 wget the initrd.img and vmlinuz in RHEL based OSes
 
 Make directories to store these files per release and make menu entries for each
