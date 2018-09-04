@@ -2,7 +2,7 @@
 
 ## Bridge Configuration:  [/etc/sysconfig/network-scripts/ifcfg-<Bridge_Name_Here>](bridge_conf)
 
-## WAN Configuration (static):  [/etc/sysconfig/network-scripts/ifcfg-<Interface_Name_Here>](wan_conf)
+## WAN Configuration (static):  [/etc/sysconfig/network-scripts/ifcfg-<Interface_Name_Here>](wan_interface_conf)
 Make sure Network Manager isn't messing up things
 ```
 systemctl disable NetworkManager
