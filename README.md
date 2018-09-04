@@ -8,7 +8,7 @@ Make sure Network Manager isn't messing up things
 systemctl disable NetworkManager
 systemctl stop NetworkManger
 ```
-And set SELinux to permissive for the configuration unitl I understand the correct configs
+And set SELinux to permissive for the configuration until I understand the correct configs
 ```
 setenforce 0
 
