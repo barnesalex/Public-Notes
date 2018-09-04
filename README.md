@@ -18,15 +18,15 @@ And for other ports you want controlled by the bridge
 
 # DHCP
 
-Install DHCPD
-``` yum install dhcpd ```
-## DHCPD Configuration:  [/etc/dhcp/dhpcd.conf])(dhcp_conf)
+Install the DHCP daemon
+``` yum install dhcp ```
+## DHCPD Configuration:  [/etc/dhcp/dhpcd.conf](dhcp_conf)
 
 # DNS
 
 Install BIND 9
-``` yum install named ```
-## NameD Configuration: [/etc/named.conf](named_conf)
+``` yum install bind ```
+## Bind Configuration: [/etc/named.conf](named_conf)
 
 ## Zone Files/var/named
 
