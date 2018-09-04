@@ -14,7 +14,7 @@ setenforce 0
 
 ```
 And for other ports you want controlled by the bridge
-## Other Interface Configuration [/etc/sysconfig/network-scripts/ifcfg-<Interface_Name_Here>](slave_interface_config)
+## Other Interface Configuration [/etc/sysconfig/network-scripts/ifcfg-<Interface_Name_Here>](slave_interface_conf)
 
 # DHCP
 
